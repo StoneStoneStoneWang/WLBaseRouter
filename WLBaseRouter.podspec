@@ -3,10 +3,10 @@
 Pod::Spec.new do |s|
 
 s.name         = "WLBaseRouter"
-s.version      = "1.0.0"
-s.summary      = "A protocol For viewmodel."
+s.version      = "1.0.1"
+s.summary      = "A protocol For router with transition."
 s.description  = <<-DESC
-A protocol For viewmodel.
+A protocol For router with transition.
 DESC
 
 s.homepage     = "https://github.com/StoneStoneStoneWang/WLBaseRouter"

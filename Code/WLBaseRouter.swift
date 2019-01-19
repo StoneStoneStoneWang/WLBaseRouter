@@ -17,15 +17,23 @@ public enum WLBaseRouter<T: WLBasePageMap> {
     
     case Present(WLBasePageMap)
     
-    func go(form vc: UIViewController,
-            animated: Bool = true,
-            completion: WLCompletion? = nil) {
+    case Dismiss
+    
+    case Pop
+    
+    public func go(form vc: UIViewController,
+                   animated: Bool = true,
+                   completion: WLCompletion? = nil) {
         
         switch self {
         case .Push(let map):
             vc.navigationController?.pushViewController(map.vc, animated: animated)
         case .Present(let map):
             vc.present(map.vc, animated: animated, completion: completion)
+        case .Dismiss:
+            vc.dismiss(animated: true, completion: completion)
+        case .Pop:
+            vc.navigationController?.popViewController(animated: true)
         }
     }
 }
